@@ -17,7 +17,12 @@ MONGO_URI = os.getenv('MONGO_URI')
 try:
     r = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, decode_responses=True)
     client = MongoClient(MONGO_URI)
-    db = client.get_default_database() or client["test"]
+    try:
+        db = client.get_default_database()
+        if db is None:
+            db = client["test"]
+    except Exception:
+        db = client["test"]
     tasks = db["tasks"]
     print(f"Connected to Redis at {REDIS_HOST} and MongoDB")
 except Exception as e:

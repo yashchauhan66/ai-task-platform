@@ -64,7 +64,7 @@ const Navbar = () => {
                 </div>
             </div>
             
-            {/* Mobile Nav Bar */}
+           
             <div className="sm:hidden border-t border-slate-100 bg-white flex justify-around py-2 px-4 shadow-[0_-1px_3px_rgba(0,0,0,0.05)]">
                  <Link 
                     to="/dashboard" 

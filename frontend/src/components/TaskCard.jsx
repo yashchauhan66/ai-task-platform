@@ -56,7 +56,7 @@ const TaskCard = ({ task }) => {
             </div>
 
             <div className="mb-4">
-                <p className="text-sm text-slate-600 line-clamp-2 bg-slate-50 p-2 rounded border border-slate-100">
+                <p className="text-sm text-slate-600 line-clamp-2 bg-slate-50 p-2 rounded border border-slate-100 break-words">
                     {task.input}
                 </p>
             </div>

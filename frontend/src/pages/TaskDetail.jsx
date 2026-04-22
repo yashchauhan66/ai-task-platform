@@ -129,7 +129,7 @@ const TaskDetail = () => {
                         <Terminal size={16} />
                         Input Content
                     </h3>
-                    <div className="bg-slate-50 rounded-xl p-4 border border-slate-100 min-h-[150px] text-slate-700 text-sm leading-relaxed whitespace-pre-wrap">
+                    <div className="bg-slate-50 rounded-xl p-4 border border-slate-100 min-h-[150px] text-slate-700 text-sm leading-relaxed whitespace-pre-wrap break-words overflow-hidden">
                         {task.input}
                     </div>
                 </div>
@@ -163,7 +163,7 @@ const TaskDetail = () => {
                 </h3>
                 {task.status === 'success' ? (
                     <div className="flex-1 bg-primary-50/50 rounded-xl p-6 border border-primary-100 flex flex-col items-center justify-center text-center">
-                        <div className="text-slate-800 text-xl font-semibold leading-relaxed">
+                        <div className="text-slate-800 text-xl font-semibold leading-relaxed break-words w-full">
                             {task.result}
                         </div>
                         <div className="mt-8 text-[10px] text-slate-400 uppercase tracking-tighter">

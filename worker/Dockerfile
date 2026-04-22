@@ -1,8 +1,11 @@
 FROM python:3.12-slim
 
+
 WORKDIR /app
 
+
 COPY requirements.txt .
+
 
 RUN pip install --no-cache-dir -r requirements.txt
 
@@ -10,9 +13,15 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY worker.py .
 
 
-ENV REDIS_HOST=redis
-ENV REDIS_PORT=6379
-ENV MONGO_URI=""
+RUN useradd -m appuser
 
 
-CMD [ "python", "-u", "worker.py" ]
+USER appuser
+
+
+ENV REDIS_HOST=${REDIS_HOST}
+ENV REDIS_PORT=${REDIS_PORT}
+ENV MONGO_URI=${MONGO_URI}
+
+
+CMD ["python", "-u", "worker.py"]
