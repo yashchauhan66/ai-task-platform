@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend-service
-  namespace: ai-task-platform
+  namespace: ai-task-plateform
 spec:
   type: NodePort
   selector:

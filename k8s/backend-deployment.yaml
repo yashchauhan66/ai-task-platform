@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend-deployment
-  namespace: ai-task-platform
+  namespace: ai-task-plateform
   labels:
     app: backend
 spec:
@@ -17,29 +17,30 @@ spec:
     spec:
       containers:
       - name: backend
-        image: yashchauhan6660/ai-task-backend:latest
+        image: yashchauhan6660/ai-task-backend:v1.0.0
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
         env:
         - name: MONGO_URI
           valueFrom:
             secretKeyRef:
-              name: app-secrets
+              name: app-secret
               key: MONGO_URI
         - name: Secret_Key
           valueFrom:
             secretKeyRef:
-              name: app-secrets
+              name: app-secret
               key: Secret_Key
         - name: REDIS_HOST
           valueFrom:
             secretKeyRef:
-              name: app-secrets
+              name: app-secret
               key: REDIS_HOST
         - name: REDIS_PORT
           valueFrom:
             secretKeyRef:
-              name: app-secrets
+              name: app-secret
               key: REDIS_PORT
         resources:
           requests:

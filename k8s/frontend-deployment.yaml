@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-deployment
-  namespace: ai-task-platform
+  namespace: ai-task-plateform
   labels:
     app: frontend
 spec:
@@ -17,7 +17,8 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: yashchauhan6660/ai-task-frontend:latest
+        image: yashchauhan6660/ai-task-frontend:v1.0.0
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
         resources:

@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis-Deployment
+  name: redis-deployment
   namespace: ai-task-plateform
-  lables:
+  labels:
     app: redis
 spec:
   replicas: 1
@@ -16,17 +16,16 @@ spec:
     metadata:
       labels:
         app: redis
-
-  spec:
-    containers:
-      - name: redis
-        image: redis:latest
-        ports:
-          - containerPort: 6379
-        resources:
-          requests:
-            memory: "128Mi" 
-            cpu: "100m"
-          limits:
-            memory: "256Mi" 
-            cpu: "200m"                 
+    spec:
+      containers:
+        - name: redis
+          image: redis:latest
+          ports:
+            - containerPort: 6379
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "200m"

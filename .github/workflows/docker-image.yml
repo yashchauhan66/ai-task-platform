@@ -20,15 +20,15 @@ jobs:
 
       - name: Build and Push Backend
         run: |
-          docker build -t ${{secrets.DOCKER_USERNAME}}/ai-task-backend:v1.0.0 ./Backend
-          docker push  ${{secrets.DOCKER_USERNAME}}/ai-task-backend:v1.0.0
+          docker build -t ${{secrets.DOCKER_USERNAME}}/ai-task-backend:v1.0.${{ github.run_number }} ./Backend
+          docker push  ${{secrets.DOCKER_USERNAME}}/ai-task-backend:v1.0.${{ github.run_number }}
 
       - name: Build and Push Frontend
         run: |
-          docker build -t ${{secrets.DOCKER_USERNAME}}/ai-task-frontend:v1.0.0 ./frontend
-          docker push  ${{secrets.DOCKER_USERNAME}}/ai-task-frontend:v1.0.0
+          docker build -t ${{secrets.DOCKER_USERNAME}}/ai-task-frontend:v1.0.${{ github.run_number }} ./frontend
+          docker push  ${{secrets.DOCKER_USERNAME}}/ai-task-frontend:v1.0.${{ github.run_number }}
 
       - name: Build and Push Worker
         run: |
-          docker build -t ${{secrets.DOCKER_USERNAME}}/ai-task-worker:v1.0.0 ./worker
-          docker push  ${{secrets.DOCKER_USERNAME}}/ai-task-worker:v1.0.0
+          docker build -t ${{secrets.DOCKER_USERNAME}}/ai-task-worker:v1.0.${{ github.run_number }} ./worker
+          docker push  ${{secrets.DOCKER_USERNAME}}/ai-task-worker:v1.0.${{ github.run_number }}
