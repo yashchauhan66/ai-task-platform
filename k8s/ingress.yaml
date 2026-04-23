@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: ai-task-ingress
   namespace: ai-task-plateform
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   ingressClassName: nginx
   rules:
