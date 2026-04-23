@@ -1,24 +1,20 @@
+# Step 1: Build
 FROM node:20-alpine AS builder
 
 WORKDIR /app
 
 COPY package*.json ./
+
 RUN npm ci
 
 COPY . .
 
-FROM node:20-alpine
+RUN npm run build
 
-WORKDIR /app
+FROM nginx:alpine
 
-COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/build /usr/share/nginx/html
 
-RUN npm ci --omit=dev
+EXPOSE 80
 
-COPY --chown=node:node --from=builder /app/ ./
-
-USER node
-
-EXPOSE 3000
-
-CMD ["npm", "start"]
+CMD ["nginx", "-g", "daemon off;"]

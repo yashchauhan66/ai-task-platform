@@ -20,7 +20,7 @@ spec:
         image: yashchauhan6660/ai-task-frontend:v1.0.0
         imagePullPolicy: Always
         ports:
-        - containerPort: 3000
+        - containerPort: 80
         resources:
           requests:
             memory: "128Mi"
