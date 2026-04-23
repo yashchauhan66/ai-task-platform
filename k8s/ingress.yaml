@@ -5,7 +5,7 @@ metadata:
   namespace: ai-task-plateform
 spec:
   rules:
-  - host: ai-task-platform.duckdns.org
+  - host: ai-task-plateform.duckdns.org
     http:
       paths:
       # FRONTEND
