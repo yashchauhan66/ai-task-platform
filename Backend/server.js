@@ -21,8 +21,8 @@ app.get("/health", (req, res) => {
     res.send("Health is ok")
 })
 
-app.use("/api/auth", Limiter({ windowMs: 15 * 60 * 1000, max: 20 }), authRoutes)
-app.use("/api/task", Limiter({ windowMs: 15 * 60 * 1000, max: 200 }), taskRoutes)
+app.use("/api/auth", authRoutes)
+app.use("/api/task", taskRoutes)
 
 connectDB();
 
