@@ -5,10 +5,9 @@ metadata:
   namespace: argocd
 
   annotations:
-    argocd-image-updater.argoproj.io/image-list: |
-      backend=yashchauhan6660/ai-task-backend,
-      frontend=yashchauhan6660/ai-task-frontend,
-      worker=yashchauhan6660/ai-task-worker
+    argocd-image-updater.argoproj.io/image-list: backend=yashchauhan66/ai-task-backend:~1.0,frontend=yashchauhan66/ai-task-frontend:~1.0,worker=yashchauhan66/ai-task-worker:~1.0
+
+    argocd-image-updater.argoproj.io/write-back-method: argocd
 
     argocd-image-updater.argoproj.io/backend.update-strategy: semver
     argocd-image-updater.argoproj.io/frontend.update-strategy: semver
@@ -17,8 +16,6 @@ metadata:
     argocd-image-updater.argoproj.io/backend.allow-tags: regexp:^v1\.0\.\d+$
     argocd-image-updater.argoproj.io/frontend.allow-tags: regexp:^v1\.0\.\d+$
     argocd-image-updater.argoproj.io/worker.allow-tags: regexp:^v1\.0\.\d+$
-
-    argocd-image-updater.argoproj.io/write-back-method: argocd
 
 spec:
   project: default
