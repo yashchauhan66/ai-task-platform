@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: worker
-        image: yashchauhan6660/ai-task-worker:v1.0.12
+        image: yashchauhan6660/ai-task-worker:v1.0.14
         imagePullPolicy: Always
         env:
         - name: MONGO_URI
