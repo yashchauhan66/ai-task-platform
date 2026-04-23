@@ -19,6 +19,7 @@ const Login = () => {
         setError('');
         try {
             const res = await API.post("/auth/login", formData);
+            console.log(res.data);
             localStorage.setItem("token", res.data.token);
             navigate(from, { replace: true });
         } catch (err) {
