@@ -1,15 +1,14 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: app-ingress
+  name: ai-task-ingress
   namespace: ai-task-plateform
 spec:
   rules:
   - host: ai-task-plateform.duckdns.org
     http:
       paths:
-      # FRONTEND
-      - path: / 
+      - path: /
         pathType: Prefix
         backend:
           service:
@@ -17,7 +16,6 @@ spec:
             port:
               number: 80
 
-      # BACKEND API
       - path: /api
         pathType: Prefix
         backend:
