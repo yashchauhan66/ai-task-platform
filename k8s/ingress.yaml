@@ -5,10 +5,11 @@ metadata:
   namespace: ai-task-plateform
 spec:
   rules:
-  - http:
+  - host: ai-task-platform.duckdns.org
+    http:
       paths:
       # FRONTEND
-      - path: /
+      - path: / 
         pathType: Prefix
         backend:
           service:
