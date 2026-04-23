@@ -4,6 +4,7 @@ metadata:
   name: ai-task-ingress
   namespace: ai-task-plateform
 spec:
+  ingressClassName: nginx
   rules:
   - host: ai-task-plateform.duckdns.org
     http:
