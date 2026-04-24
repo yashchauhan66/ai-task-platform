@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 
   annotations:
-    argocd-image-updater.argoproj.io/image-list: backend=yashchauhan66/ai-task-backend:~1.0,frontend=yashchauhan66/ai-task-frontend:~1.0,worker=yashchauhan66/ai-task-worker:~1.0
+    argocd-image-updater.argoproj.io/image-list: backend=yashchauhan6660/ai-task-backend:~1.0,frontend=yashchauhan6660/ai-task-frontend:~1.0,worker=yashchauhan6660/ai-task-worker:~1.0
 
     argocd-image-updater.argoproj.io/write-back-method: argocd
 
@@ -27,7 +27,7 @@ spec:
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: ai-task-platform
+    namespace: ai-task-plateform
 
   syncPolicy:
     automated:
