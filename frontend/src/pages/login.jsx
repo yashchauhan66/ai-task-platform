@@ -59,6 +59,7 @@ const Login = () => {
                                 required
                                 placeholder='name@company.com' 
                                 className="input-field pl-10"
+                                autoComplete="email"
                                 value={formData.email} 
                                 onChange={(e) => setFormData({...formData, email: e.target.value})}
                             />
@@ -79,6 +80,7 @@ const Login = () => {
                                 required
                                 placeholder='••••••••' 
                                 className="input-field pl-10"
+                                autoComplete="current-password"
                                 value={formData.password} 
                                 onChange={(e) => setFormData({...formData, password: e.target.value})}
                             />

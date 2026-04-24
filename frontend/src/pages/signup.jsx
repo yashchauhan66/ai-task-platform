@@ -54,6 +54,7 @@ const Signup = () => {
                                 required
                                 placeholder='John Doe' 
                                 className="input-field pl-10"
+                                autoComplete="name"
                                 value={formData.name} 
                                 onChange={(e) => setFormData({...formData, name: e.target.value})}
                             />
@@ -71,6 +72,7 @@ const Signup = () => {
                                 required
                                 placeholder='name@company.com' 
                                 className="input-field pl-10"
+                                autoComplete="email"
                                 value={formData.email} 
                                 onChange={(e) => setFormData({...formData, email: e.target.value})}
                             />
@@ -88,6 +90,7 @@ const Signup = () => {
                                 required
                                 placeholder='••••••••' 
                                 className="input-field pl-10"
+                                autoComplete="new-password"
                                 value={formData.password} 
                                 onChange={(e) => setFormData({...formData, password: e.target.value})}
                             />
