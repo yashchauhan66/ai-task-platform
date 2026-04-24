@@ -230,6 +230,10 @@ Get admin password:
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 -d; echo
 ```
 
+### Argo CD screenshot
+
+![Argo CD application network view](docs/argocd-screen.png)
+
 ---
 
 ## CI/CD (Docker build + push)
