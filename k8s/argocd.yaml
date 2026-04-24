@@ -5,17 +5,17 @@ metadata:
   namespace: argocd
 
   annotations:
-    argocd-image-updater.argoproj.io/image-list: backend=yashchauhan6660/ai-task-backend:~1.0,frontend=yashchauhan6660/ai-task-frontend:~1.0,worker=yashchauhan6660/ai-task-worker:~1.0
+    argocd-image-updater.argoproj.io/image-list: backend=yashchauhan6660/ai-task-backend:latest,frontend=yashchauhan6660/ai-task-frontend:latest,worker=yashchauhan6660/ai-task-worker:latest
 
     argocd-image-updater.argoproj.io/write-back-method: argocd
 
-    argocd-image-updater.argoproj.io/backend.update-strategy: semver
-    argocd-image-updater.argoproj.io/frontend.update-strategy: semver
-    argocd-image-updater.argoproj.io/worker.update-strategy: semver
+    argocd-image-updater.argoproj.io/backend.update-strategy: digest
+    argocd-image-updater.argoproj.io/frontend.update-strategy: digest
+    argocd-image-updater.argoproj.io/worker.update-strategy: digest
 
-    argocd-image-updater.argoproj.io/backend.allow-tags: regexp:^v1\.0\.\d+$
-    argocd-image-updater.argoproj.io/frontend.allow-tags: regexp:^v1\.0\.\d+$
-    argocd-image-updater.argoproj.io/worker.allow-tags: regexp:^v1\.0\.\d+$
+    argocd-image-updater.argoproj.io/backend.allow-tags: regexp:^latest$
+    argocd-image-updater.argoproj.io/frontend.allow-tags: regexp:^latest$
+    argocd-image-updater.argoproj.io/worker.allow-tags: regexp:^latest$
 
 spec:
   project: default
