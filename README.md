@@ -2,6 +2,12 @@
 
 Full-stack app deployed on Kubernetes (frontend, backend, redis, worker) and exposed via **ingress-nginx**. Uses **Argo CD** for GitOps and **Argo CD Image Updater** to automatically roll out the **latest Docker images**.
 
+### App screenshots
+
+![Task details view](docs/app-task-view.png)
+
+![Task dashboard view](docs/app-dashboard.png)
+
 ### Live URLs
 - **App**: `http://ai-task-plateform.duckdns.org/`
 - **Backend health**: `http://ai-task-plateform.duckdns.org/api/health`
@@ -233,6 +239,12 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath='{.data.pas
 ### Argo CD screenshot
 
 ![Argo CD application network view](docs/argocd-screen.png)
+
+#### More Argo CD views
+
+![Argo CD application pods view](docs/argocd-pods.png)
+
+![Argo CD application resources list](docs/argocd-resources.png)
 
 ---
 
