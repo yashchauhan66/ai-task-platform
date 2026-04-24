@@ -17,10 +17,26 @@ spec:
     spec:
       containers:
       - name: backend
-        image: yashchauhan6660/ai-task-backend:v1.0.19
+        image: yashchauhan6660/ai-task-backend:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 5000
+          initialDelaySeconds: 8
+          periodSeconds: 10
+          timeoutSeconds: 2
+          failureThreshold: 3
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 5000
+          initialDelaySeconds: 25
+          periodSeconds: 20
+          timeoutSeconds: 2
+          failureThreshold: 3
         env:
         - name: MONGO_URI
           valueFrom:
@@ -45,7 +61,7 @@ spec:
         resources:
           requests:
             memory: "128Mi"
-            cpu: "250m"
+            cpu: "100m"
           limits:
-            memory: "256Mi"
+            memory: "512Mi"
             cpu: "500m"
