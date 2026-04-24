@@ -24,6 +24,7 @@ spec:
     repoURL: https://github.com/yashchauhan66/ai-task-platform.git
     targetRevision: main
     path: k8s
+    kustomize: {}
 
   destination:
     server: https://kubernetes.default.svc
